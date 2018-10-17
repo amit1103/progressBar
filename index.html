@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ProgressBar</title>
+<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/bootstrap.min.css">
+<script type="text/javascript" src="http://localhost/aidcfeedback/js/jquery-1.9.1.js"></script>
+ <script type="text/javascript">
+$(document).ready(function(){
+    $('.progress-value > span').each(function(){
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        },{
+            duration: 1500,
+            easing: 'swing',
+            step: function (now){
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+});
+
+</script>
+
+<style type="text/css">
+.progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 30px;
+}
+.progress{
+    height: 17px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    overflow: visible;
+    position: relative;
+	font-size:12px;
+	color:#124a71;
+}
+.progress .progress-bar{
+    border-radius: 15px;
+    box-shadow: none;
+    position: relative;
+    animation: animate-positive 2s;
+}
+.progress .progress-icon,
+.progress .progress-value{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 40px;
+    background: #fff;
+    border: 7px solid #1f75c4;
+    font-size:15px;
+    font-weight: 600;
+    color: #1f75c4;
+    position: absolute;
+    top: -17px;
+    right: -5px;
+}
+.progress .progress-icon{
+    right: auto;
+    left: -5px;
+}
+.progress.orange .progress-icon,
+.progress.orange .progress-value{
+    border: 7px solid #f7810e;
+    color: #f7810e;
+}
+.progress.pink .progress-icon,
+.progress.pink .progress-value{
+    border: 7px solid #f2438f;
+    color: #f2438f;
+}
+.progress.green .progress-icon,
+.progress.green .progress-value{
+    border: 7px solid #08a061;
+    color: #08a061;
+}
+@-webkit-keyframes animate-positive{
+    0%{ width: 0; }
+}
+@keyframes animate-positive{
+    0%{ width: 0; }
+}
+</style>
+
+</head>
+
+<body style="margin-top:150px;">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="progress">
+                <div class="progress-bar" style="width:100%; background:#1f75c4;">
+                    <span class="progress-icon fa fa-globe"></span>
+                    <div class="progress-value"><span>100</span>%</div>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>
